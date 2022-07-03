@@ -1,1 +1,1 @@
-# thirdPackage_js
+# thirdpackage_js
