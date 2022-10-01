@@ -21,6 +21,11 @@ const routes = [{
     path: '/slideVerify',
     name: 'SlideVerify',
     component: () => import( /* webpackChunkName: "slideVerify" */ '../views/slideVerify')
+  },
+  {
+    path: '/swiperExample',
+    name: 'swiperExample',
+    component: () => import( /* webpackChunkName: "swiperExample" */ '../views/swiperExample')
   }
 ]
 

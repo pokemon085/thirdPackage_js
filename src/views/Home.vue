@@ -29,8 +29,13 @@ export default {
           key: "slideVerify",
           url: "https://juejin.cn/post/6844904073955639303",
         },
+        swiperExample: {
+          name: "swiperExample(swiperExample)",
+          key: "swiperExample",
+          url: "https://codeantenna.com/a/YKtCc2o5iy",
+        },
       },
-      list: ["slideVerify"],
+      list: ["slideVerify","swiperExample"],
     };
   },
   methods: {
