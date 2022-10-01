@@ -7,12 +7,12 @@
    
     <div class="wrapper">
       <swiper ref="mySwiper" :options="swiperOption">
-        <swiper-slide v-for="item of swiperList" :key="item.id">
+        <swiper-slide v-for="(item,index) of swiperList" :key="index" >
           <div class="swiper-img">
             <img :src="item.imgUrl" />
           </div>
 
-          <div class="swiper-id">{{ item.id }}</div>
+          <div class="swiper-id">{{ item.id }}/{{index}}</div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -38,26 +38,26 @@ export default {
         pagination: {
           el: ".swiper-pagination",
         },
-        loop: true,
+        // loop: true,
       },
       swiperList: [
         {
-          id: "1",
+          id: "11",
           imgUrl:
             "https://imgs.qunarzz.com/vc/e3/a1/71/f498dfd3bed948d623c9093252.jpg_92.jpg",
         },
         {
-          id: "2",
+          id: "22",
           imgUrl:
             "https://imgs.qunarzz.com/vs_ceph_vcimg/c0a60fa20379efa4f02ce527a680dc1b.jpeg",
         },
         {
-          id: "3",
+          id: "23",
           imgUrl:
             "https://imgs.qunarzz.com/vc/e3/a1/71/f498dfd3bed948d623c9093252.jpg_92.jpg",
         },
         {
-          id: "4",
+          id: "44",
           imgUrl:
             "https://imgs.qunarzz.com/vs_ceph_vcimg/c0a60fa20379efa4f02ce527a680dc1b.jpeg",
         },
@@ -71,8 +71,10 @@ export default {
   },
   methods: {
     goPage() {
+    const a= this.swiperList.findIndex(item=>item.id===this.currentId);
+    console.log(a)
     //slideTo(id,speed)
-      this.$refs.mySwiper.swiper.slideTo(this.currentId, 0);
+      this.$refs.mySwiper.swiper.slideTo(a, 0);
     },
   },
 };
